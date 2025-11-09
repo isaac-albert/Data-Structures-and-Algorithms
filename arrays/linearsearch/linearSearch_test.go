@@ -1,6 +1,8 @@
 package linearsearch
 
-import "testing"
+import (
+	"testing"
+)
 
 var testCases = []struct {
 	input          []int
@@ -32,6 +34,7 @@ func TestLinearSearc(t *testing.T) {
 		res := linearSearch(tt.input, tt.valueToTest)
 		if res != tt.expectedOutput {
 			t.Errorf("got %v, want %v", res, tt.expectedOutput)
+			continue
 		}
 	}
 }

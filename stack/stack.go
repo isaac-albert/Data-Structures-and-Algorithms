@@ -41,10 +41,6 @@ func (s *Stack) Pop() any {
 	h := s.head
 	s.head = s.head.prev
 
-	if s.Length == 0 {
-		s.head = nil
-	}
-
 	//free space
 	h.prev = nil
 

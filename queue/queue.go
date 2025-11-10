@@ -7,12 +7,12 @@ type node struct {
 
 type Queue struct {
 	head, tail *node
-	length     int
+	Length     int
 }
 
 func (q *Queue) Init() *Queue {
 	q.head, q.tail = nil, nil
-	q.length = 0
+	q.Length = 0
 	return q
 }
 
@@ -32,7 +32,7 @@ func (q *Queue) Dequeue() any {
 	if q.head == nil {
 		return nil
 	}
-	q.length--
+	q.Length--
 
 	h := q.head
 	q.head = q.head.next
@@ -51,7 +51,7 @@ func (q *Queue) Enqueue(item any) {
 	node := &node{
 		Value: item,
 	}
-	q.length++
+	q.Length++
 	if q.tail == nil {
 		q.head, q.tail = node, node
 		return
@@ -61,4 +61,3 @@ func (q *Queue) Enqueue(item any) {
 	q.tail = node
 }
 
-func (q *Queue) Length() int { return q.length }
